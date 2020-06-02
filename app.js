@@ -5,9 +5,14 @@ const mongoose = require('mongoose');
 var path = require('path');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
+var bodyParser = require('body-parser');
+var multer = require('multer');
+var forms = multer();
+var cors = require('cors');
+var hbs = require('express-handlebars');
 
 var indexRouter = require('./routes/index');
-var usersRouter = require('./routes/users');
+
 
 var app = express();
 
@@ -30,8 +35,23 @@ mongoose.connection.on('error',(err)=>{
 
 
 // view engine setup
+app.engine('hbs',hbs({extname:'hbs',defaultLayout:'layout',layoutDir:__dirname + '/views/layouts/'}));
 app.set('views', path.join(__dirname, 'views'));
-app.set('view engine', 'jade');
+app.set('view engine', 'hbs');
+
+//middleware
+app.use(cors());
+
+// for parsing application/json
+app.use(bodyParser.json()); 
+
+// for parsing multipart/form-data
+app.use(forms.array()); 
+
+// for parsing application/xwww-
+app.use(bodyParser.urlencoded({ extended: false })); 
+
+
 
 app.use(logger('dev'));
 app.use(express.json());
