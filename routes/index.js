@@ -4,7 +4,7 @@ const users = require('./users');
 const category=require('./category');
 const location=require('./geolocation');
 const validation=require('./validation');
-
+const fileupload=require('./fileupload');
 
 const router = new Router({ mergeParams: true });
 
@@ -22,6 +22,9 @@ router.use('/validation',validation)
 
 // User Api's
 router.use('/users', users);
+
+// fileupload Api's
+router.use('/fileupload',fileupload);
 
 
 module.exports = router;

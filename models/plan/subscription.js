@@ -7,7 +7,7 @@ const subscriptionSchema=new Schema({
     },
     planid:
     {
-        type: Schema.Types.ObjectId, ref: 'plan'
+        type: Number
     },
     discountid:
     {

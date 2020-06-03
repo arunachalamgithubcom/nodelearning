@@ -15,7 +15,7 @@ router.post('/getcategory',function(req,res,next){
            else
            {
                 res.json({
-                    success:true,
+                    success:false,
                     message:'No records found',
                     data:category,
                 });
@@ -36,7 +36,7 @@ router.post('/getsubcategory',function(req,res,next){
     else
     {
          res.json({
-             success:true,
+             success:false,
              message:'No records found',
              data:subcategory,
          });

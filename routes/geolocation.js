@@ -18,7 +18,7 @@ router.post('/getcountry',function(req,res,next){
         else
         {
              res.json({
-                 success:true,
+                 success:false,
                  message:'No records found',
                  data:country,
              });
@@ -39,7 +39,7 @@ router.post('/getstate',function(req,res,next){
         else
         {
              res.json({
-                 success:true,
+                 success:false,
                  message:'No records found',
                  daa:state,
              });
@@ -59,7 +59,7 @@ router.post('/getcity',function(req,res,next){
         else
         {
              res.json({
-                 success:true,
+                 success:false,
                  message:'No records found',
                  data:city,
              });
@@ -80,7 +80,7 @@ router.post('/sortcity',function(req,res,next){
         else
         {
              res.json({
-                 success:true,
+                 success:false,
                  message:'No records found',
                  data:city,
              });

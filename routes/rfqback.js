@@ -220,6 +220,8 @@ router.post('/rfqgetdata', function(req, res, next) {
 
     });
 });
-
+router.post('/freepostverification', function(req, res, next) {   
+    res.send('respond with a resource');
+});
 
 module.exports = router;
