@@ -5,6 +5,10 @@ const referralSchema=new Schema({
       {
           type:String,
       },
+      referal_code:
+      {
+         type:String,
+      },
       referred_email:
       {
           type:String,

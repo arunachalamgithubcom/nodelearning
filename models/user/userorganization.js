@@ -53,10 +53,6 @@ const usercompanySchema=new Schema({
    {
        type:String,
    },
-   refferal_code:
-   {
-       type:String,
-   },
    created_at:
    {
        type:String,

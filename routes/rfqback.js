@@ -4,8 +4,16 @@ const router = new Router({ mergeParams: true });
 const rfqpost=require('../models/rfq/rfqpost');
 const rfqcustomer=require('../models/rfq/rfqcustomer');
 const geocountry=require('../models/geolocation/country');
+const fs=require('fs');
+const Handlebars = require("handlebars");
+
+
 const sgMail = require('@sendgrid/mail');
 sgMail.setApiKey(process.env.SENDGRID_API_KEY);
+
+//emailtemplates
+var rfqtemplate=fs.readFileSync('./views/rfq.hbs','utf-8');
+var compiledrfq= Handlebars.compile(rfqtemplate);
 
 router.post('/rfqpostdata', function(req, res, next) {
     
@@ -223,5 +231,7 @@ router.post('/rfqgetdata', function(req, res, next) {
 router.post('/freepostverification', function(req, res, next) {   
     res.send('respond with a resource');
 });
-
+router.post('/verifyreferenceno', function(req, res, next) {   
+    res.send(req.body.test);
+});
 module.exports = router;
