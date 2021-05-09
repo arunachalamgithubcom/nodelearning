@@ -17,7 +17,7 @@
     "express-handlebars": "^4.0.4",
     "express-hbs": "^2.3.3",
     "google-libphonenumber": "^3.2.10",
-    "handlebars": "^4.7.6",
+    "handlebars": "^4.7.7",
     "http-errors": "~1.6.3",
     "jsonwebtoken": "^8.5.1",
     "mongoose": "^5.9.10",
